@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function homepage(){
         $products = Product::all()->toArray() ;
 
-        $reports = Product::select('productType', 'quantity', 'note')->get();
+        $reports = Product::select('productType', 'note',\DB::raw('SUM(quantity) as total_quantity'))->groupBy('productType', 'note')->get();
         return view('welcome', compact("products", "reports"));
     }
     /**

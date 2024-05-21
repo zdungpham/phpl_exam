@@ -91,7 +91,7 @@
                 @foreach ($reports as $items)
                 <tr>
                 <td>{{$items['productType']}}</td>
-                <td>{{$items['quantity']}}</td>
+                <td>{{$items['total_quantity']}}</td>
                 <td>{{$items['note']}}</td>
                 </tr>
                 @endforeach
